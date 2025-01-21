@@ -113,10 +113,16 @@
     },
     "npm": {
       "publish": true,
-      "registry": "https://npm.pkg.github.com/"
+      "registry": "https://npm.pkg.github.com/",
+      "publishPath": "./",
+      "skipChecks": true
     },
     "github": {
       "release": true
+    },
+    "hooks": {
+      "before:npm": "npm config set registry https://npm.pkg.github.com/",
+      "after:npm": "npm config set registry https://registry.npmjs.org/"
     },
     "plugins": {
       "@release-it/conventional-changelog": {
