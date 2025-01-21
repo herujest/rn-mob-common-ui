@@ -42,7 +42,7 @@
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "bob build",
+    "prepare": "yarn typecheck && bob build",
     "release": "release-it"
   },
   "keywords": [
@@ -197,5 +197,11 @@
     "languages": "js",
     "type": "library",
     "version": "0.45.5"
+  },
+  "dependencies": {
+    "@react-navigation/native": "^6.1.18",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-modal": "^13.0.1",
+    "react-native-svg": "^15.11.1"
   }
 }

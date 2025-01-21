@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
+    "@herujest/rn-mob-common-ui": "/Users/heru/Documents/pw/mob-common-ui",
     "expo": "~52.0.26",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
