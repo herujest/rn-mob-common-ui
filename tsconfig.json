@@ -9,8 +9,8 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
-    "declaration": true, // Generates .d.ts files
-    "outDir": "./lib", // Outputs compiled files to lib
+    "declaration": true,
+    "outDir": "./lib",
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "lib": [

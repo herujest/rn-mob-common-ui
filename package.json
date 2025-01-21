@@ -1,6 +1,6 @@
 {
   "name": "@herujest/rn-mob-common-ui",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "basic ui design system for basic mobile needs",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -42,7 +42,7 @@
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "yarn typecheck && bob build",
+    "prepare": "npm install --registry=https://registry.npmjs.org/ && yarn typecheck && bob build",
     "release": "release-it"
   },
   "keywords": [
