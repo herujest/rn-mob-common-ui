@@ -6,10 +6,24 @@ Basic UI design system for basic mobile needs.
 ## Installation
 
 ```sh
-npm install rn-mob-common-ui
+npm install @herujest/rn-mob-common-ui
+
+or
+
+yarn add @herujest/rn-mob-common-ui
 ```
 
 ## Usage
+
+initial usage:
+call this in your initial App file to wrap src router
+
+
+<ThemeProvider>
+  ...
+  <AppNavigator>
+  ...
+</ThemeProvider>
 
 Below are examples of how to use the components from the `rn-mob-common-ui` library.
 

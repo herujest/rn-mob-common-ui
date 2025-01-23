@@ -5,3 +5,4 @@ export function multiply(a: number, b: number): number {
 export * from './Assets';
 export * from './Component';
 export * from './Context';
+export * from './Utils';
