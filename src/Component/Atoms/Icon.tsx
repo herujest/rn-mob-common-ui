@@ -1,78 +1,7 @@
 import React, { useMemo } from 'react';
-import { type StyleProp, type ViewStyle } from 'react-native';
 import { Path, Svg } from 'react-native-svg';
-import json from '../../Assets/Fonts/selection.json';
-
-interface IconSet {
-  icons: Array<any>;
-}
-interface IconAttrs {
-  fill?: string;
-}
-interface IconMap {
-  name: string;
-  paths: Array<string>;
-  attrs?: Array<IconAttrs>;
-}
-
-export type IconName =
-  | 'params'
-  | 'sunrise'
-  | 'afternoon'
-  | 'sunset'
-  | 'night'
-  | 'settings-filled'
-  | 'home'
-  | 'home-filled'
-  | 'arrow-up-left2'
-  | 'arrow-up2'
-  | 'arrow-up-right2'
-  | 'arrow-right2'
-  | 'arrow-down-right2'
-  | 'arrow-down2'
-  | 'arrow-down-left2'
-  | 'arrow-left2'
-  | 'radio-checked'
-  | 'radio-unchecked'
-  | 'plus-circle'
-  | 'clock'
-  | 'settings'
-  | 'close'
-  | 'work-case'
-  | 'todo-done'
-  | 'experiment'
-  | 'education-learning'
-  | 'travel-luggage'
-  | 'clean'
-  | 'exercise-health-fitness'
-  | 'edit'
-  | 'trash-bin'
-  | 'redirect'
-  | 'handphone'
-  | 'info-square';
-
-export interface IIcon extends Omit<SvgIconProps, 'iconSet' | 'name' | 'size'> {
-  name: IconName;
-  color?: string;
-  size?: number;
-  strokeWidth?: number;
-  offset?: number;
-  style?: StyleProp<ViewStyle>;
-}
-
-export interface SvgIconProps {
-  iconSet: IconSet;
-  name: string;
-  color?: string;
-  size?: number;
-  strokeWidth?: number;
-  offset?: number; // some icon might have different padding, use this to offset it
-  width?: number;
-  height?: number;
-  viewBoxWidthPercentage?: number;
-  viewBoxHeightPercentage?: number;
-  style?: StyleProp<ViewStyle>;
-}
+import { useTheme } from '../../Context';
+import type { IconMap, IconSet, IIcon, SvgIconProps } from './Icon.types';
 
 const SvgIcon: React.FC<SvgIconProps> = ({
   iconSet,
@@ -167,11 +96,12 @@ export default function Icon({
   viewBoxHeightPercentage,
   style,
 }: IIcon) {
+  const { iconSet } = useTheme();
   const sizeIcon = size || 15;
 
   return (
     <SvgIcon
-      iconSet={json}
+      iconSet={iconSet}
       name={name}
       color={color}
       size={sizeIcon}
