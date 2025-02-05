@@ -13,7 +13,7 @@ export interface IconSet {
       isMulticolor2: boolean;
       grid: number;
       tags: string[];
-      colorPermutations: Record<string, {}[] | undefined>;
+      colorPermutations?: Record<string, {}[] | undefined>;
     };
     attrs: any[];
     properties: {
