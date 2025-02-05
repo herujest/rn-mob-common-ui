@@ -1,4 +1,5 @@
 ---
+
 # rn-mob-common-ui
 
 Basic UI design system for basic mobile needs.
@@ -15,15 +16,63 @@ yarn add @herujest/rn-mob-common-ui
 
 ## Usage
 
-initial usage:
-call this in your initial App file to wrap src router
+Getting Started
 
+1. Set Up the ThemeProvider
 
-<ThemeProvider>
-  ...
-  <AppNavigator>
-  ...
-</ThemeProvider>
+Wrap your application (or a part of it) with the ThemeProvider component. This makes the theme and icon data available to all child components.
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ThemeProvider } from '@herujest/rn-mob-common-ui';
+import App from './App';
+
+// Example icon set (replace with your own JSON data)
+const iconSet = {
+  IcoMoonType: 'selection',
+  icons: [
+    {
+      icon: {
+        paths: ['...'],
+        attrs: [{}],
+        isMulticolor: false,
+        isMulticolor2: false,
+        tags: ['radio-checked'],
+        grid: 0,
+        colorPermutations: {
+          '17617819612839761': [{}],
+          '283976188922291': [{}]
+        }
+      },
+      attrs: [{}],
+      properties: {
+        order: 1126,
+        id: 0,
+        name: 'radio-checked',
+        prevSize: 32,
+        code: 59664
+      },
+      setIdx: 0,
+      setId: 4,
+      iconIdx: 2
+    }
+  ],
+  height: 1024,
+  metadata: { name: 'icomoon' },
+  preferences: { ... }
+};
+
+ReactDOM.render(
+  <ThemeProvider iconSet={iconSet}>
+    <App />
+  </ThemeProvider>,
+  document.getElementById('root')
+);
+
+```
+
+--
 
 Below are examples of how to use the components from the `rn-mob-common-ui` library.
 
@@ -37,8 +86,8 @@ import { Buttons } from 'rn-mob-common-ui';
 <Buttons
   type="primary"
   title="Click Me"
-  onPress={() => console.log("Button Pressed!")}
-/>
+  onPress={() => console.log('Button Pressed!')}
+/>;
 ```
 
 ### Icon
@@ -48,7 +97,7 @@ Render SVG icons easily.
 ```tsx
 import { Icon } from 'rn-mob-common-ui';
 
-<Icon name="settings" size={24} color="#000" />
+<Icon name="settings" size={24} color="#000" />;
 ```
 
 ### Text
@@ -58,7 +107,7 @@ Styled text component with multiple variants for different textual representatio
 ```tsx
 import { Text } from 'rn-mob-common-ui';
 
-<Text variant="headline1">Hello World!</Text>
+<Text variant="headline1">Hello World!</Text>;
 ```
 
 ### Container
@@ -70,7 +119,7 @@ import { Container } from 'rn-mob-common-ui';
 
 <Container>
   <Text>Safe and sound!</Text>
-</Container>
+</Container>;
 ```
 
 ### Content
@@ -82,7 +131,7 @@ import { Content } from 'rn-mob-common-ui';
 
 <Content>
   <Text>Scrollable Content Here</Text>
-</Content>
+</Content>;
 ```
 
 ### InputField
@@ -98,7 +147,7 @@ import { InputField } from 'rn-mob-common-ui';
   onChangeText={setUsername}
   error={!!error}
   placeholder="Enter your username"
-/>
+/>;
 ```
 
 ### Modal & Popups
@@ -118,7 +167,10 @@ A component to display empty states with an image and description.
 ```tsx
 import { EmptyView } from 'rn-mob-common-ui';
 
-<EmptyView description="No Data Found" imageSource={require('./path/to/image.png')} />
+<EmptyView
+  description="No Data Found"
+  imageSource={require('./path/to/image.png')}
+/>;
 ```
 
 ### Theme Context
@@ -146,5 +198,3 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
-
----
