@@ -2285,8 +2285,8 @@ __metadata:
   linkType: hard
 
 "@herujest/rn-mob-common-ui@file:/Users/heru/Documents/pw/mob-common-ui::locator=rn-mob-common-ui-example%40workspace%3Aexample":
-  version: 0.1.0
-  resolution: "@herujest/rn-mob-common-ui@file:/Users/heru/Documents/pw/mob-common-ui#/Users/heru/Documents/pw/mob-common-ui::hash=c16890&locator=rn-mob-common-ui-example%40workspace%3Aexample"
+  version: 0.2.2
+  resolution: "@herujest/rn-mob-common-ui@file:/Users/heru/Documents/pw/mob-common-ui#/Users/heru/Documents/pw/mob-common-ui::hash=0e5460&locator=rn-mob-common-ui-example%40workspace%3Aexample"
   dependencies:
     "@react-navigation/native": ^6.1.18
     react-native-keyboard-aware-scroll-view: ^0.9.5
@@ -2295,7 +2295,9 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 6886f2203c43472bef382e2dca670771fac600b40edc0cdd3d50bda272a65f4f4a02ecfb771fabbb3a5108f88585798ac60e6703adf0ea344707018eb90d3a20
+  bin:
+    generate-icon-types: ./src/scripts/generate-icon-types.js
+  checksum: 3b08dd8fb6418b9b8a51227e66433cc38b9bb807cbb9e29b16ee9465101ffbaa1a6da9ad3431ee03ddd31bc44d5be8dbb5c27f76c030c1a661f54440100847f4
   languageName: node
   linkType: hard
 
@@ -2328,6 +2330,8 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
+  bin:
+    generate-icon-types: ./src/scripts/generate-icon-types.js
   languageName: unknown
   linkType: soft
 
@@ -5947,9 +5951,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.73":
-  version: 1.5.92
-  resolution: "electron-to-chromium@npm:1.5.92"
-  checksum: 412673e3f48351bd8a2698975cdd9b9aa20232f6fba386cd5c5fc7c5434869fac294d200d10ac88af4eed48d5607ac144b9ea4611bd2ce8865cc439a4626c561
+  version: 1.5.93
+  resolution: "electron-to-chromium@npm:1.5.93"
+  checksum: 96554cabb4d43552a41f15eb1e019cff00c72966c54857ccfcfe29911697a90c3859ae34d96256470e68cb44dd66cf34c67faa8f291ada747450f2bbadb8f1a0
   languageName: node
   linkType: hard
 
@@ -13756,8 +13760,8 @@ __metadata:
   linkType: hard
 
 "terser@npm:^5.15.0":
-  version: 5.37.0
-  resolution: "terser@npm:5.37.0"
+  version: 5.38.0
+  resolution: "terser@npm:5.38.0"
   dependencies:
     "@jridgewell/source-map": ^0.3.3
     acorn: ^8.8.2
@@ -13765,7 +13769,7 @@ __metadata:
     source-map-support: ~0.5.20
   bin:
     terser: bin/terser
-  checksum: 70c06a8ce1288ff4370a7e481beb6fc8b22fc4995371479f49df1552aa9cf8e794ace66e1da6e87057eda1745644311213f5043bda9a06cf55421eff68b3ac06
+  checksum: f7a5edbe303fdeea005dd0749fc1d7cd84ee5ccca9fb8df750e6be7b088567d5d24ede6f2b412ba5060bd547399f41c3dda52bb82170ce38e25444f731a8bb80
   languageName: node
   linkType: hard
 

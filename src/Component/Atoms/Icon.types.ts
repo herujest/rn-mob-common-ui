@@ -1,4 +1,6 @@
 import type { StyleProp, ViewStyle } from 'react-native';
+/// <reference path="./Icon-name.types.ts" />
+import type { IconName } from './Icon-name.types.fallback';
 
 export interface IconSet {
   IcoMoonType?: string;
@@ -33,7 +35,7 @@ export interface IconSet {
 export type ExtractIconNames<T extends IconSet> =
   T['icons'][number]['properties']['name'];
 
-export type IconName = ExtractIconNames<IconSet>;
+// export type IconName = ExtractIconNames<IconSet>;
 
 export interface IconAttrs {
   fill?: string;
