@@ -36,6 +36,9 @@
     "!**/__mocks__",
     "!**/.*"
   ],
+  "bin": {
+    "generate-icon-types": "./src/scripts/generate-icon-types.js"
+  },
   "scripts": {
     "example": "yarn workspace rn-mob-common-ui-example",
     "test": "jest",
