@@ -1,6 +1,5 @@
 import type { StyleProp, ViewStyle } from 'react-native';
-/// <reference path="./Icon-name.types.ts" />
-import type { IconName } from './Icon-name.types.fallback';
+import type { IconName } from './Icon-name.types';
 
 export interface IconSet {
   IcoMoonType?: string;
