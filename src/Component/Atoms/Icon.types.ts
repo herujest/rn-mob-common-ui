@@ -46,7 +46,7 @@ export interface IconMap {
 }
 
 export interface IIcon extends Omit<SvgIconProps, 'iconSet' | 'name' | 'size'> {
-  name: IconName;
+  name: IconName | string;
   color?: string;
   size?: number;
   strokeWidth?: number;

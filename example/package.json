@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~4.0.1",
-    "@herujest/rn-mob-common-ui": "/Users/heru/Documents/pw/mob-common-ui",
+    "@herujest/rn-mob-common-ui": "file:../",
     "expo": "~52.0.26",
     "expo-status-bar": "~2.0.1",
     "react": "18.3.1",
@@ -22,5 +22,9 @@
     "@babel/core": "^7.20.0",
     "react-native-builder-bob": "^0.35.2"
   },
-  "private": true
+  "private": true,
+  "@herujest/rn-mob-common-ui": {
+    "icon-json-path": "./src/assets/fonts/customicon.json",
+    "output-types-path": "./src/assets/fonts/IconTypes.ts"
+  }
 }

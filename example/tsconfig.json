@@ -1,6 +1,14 @@
 {
   "extends": "../tsconfig",
   "compilerOptions": {
-    // Avoid expo-cli auto-generating a tsconfig
-  }
+    "baseUrl": "./",
+    "paths": {
+      "@herujest/rn-mob-common-ui": [
+        "../src/index"
+      ]
+    }
+  },
+  "include": [
+    "src"
+  ]
 }

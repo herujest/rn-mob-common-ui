@@ -8,9 +8,9 @@ import {
   Gutters,
   Metrics,
   CommonStyles,
-  Icon,
 } from '@herujest/rn-mob-common-ui';
 import { StyleSheet, View } from 'react-native';
+import Icon from './assets/fonts/Icon';
 
 const result = multiply(3, 7);
 
@@ -22,7 +22,7 @@ export default function App() {
           <View style={styles.container}>
             <Text>Result: {result}</Text>
           </View>
-          <Icon name="" />
+          <Icon name="mobile" size={15} />
           <Buttons type="primary" title="Primary Button" />
           <Buttons type="primaryInactive" title="Primary Inactive Button" />
           <Buttons type="secondary" title="Secondary Button" />
