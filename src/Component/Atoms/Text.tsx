@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text as RNText, StyleSheet } from 'react-native';
 import { useTheme } from '../../Context/ThemeContext';
-import type { TypographyProps } from './Text.type';
+import type { TypographyProps } from './Text.types';
 
 const Text: React.FC<TypographyProps> = React.memo(
   ({ variant = 'bodyText1', style, children, ...props }) => {
