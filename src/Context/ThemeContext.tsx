@@ -1,10 +1,15 @@
 import React, { createContext, useContext, useState } from 'react';
 import { Dimensions } from 'react-native';
+import { defaultFontConfig } from '.';
 import { darkTheme, lightTheme } from '../Assets/Colors';
-import type { ThemeContextType, ThemeProviderProps } from './ThemeContext.type';
+import defaultIconSet from '../Assets/Fonts/selection.json';
 import type { IconSet } from '../Component';
 import type { ExtractIconNames } from '../Component/Atoms/Icon.types';
-import defaultIconSet from '../Assets/Fonts/selection.json';
+import type {
+  FontConfig,
+  ThemeContextType,
+  ThemeProviderProps,
+} from './ThemeContext.type';
 
 const ThemeContext = createContext<ThemeContextType<any> | undefined>(
   undefined
@@ -18,10 +23,17 @@ export const useTheme = <T extends IconSet>(): ThemeContextType<T> => {
   return context;
 };
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({
+  children,
+  customFonts,
+}) => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
   const { width, height } = Dimensions.get('window');
   const [iconSet, setIconSet] = useState<IconSet>(defaultIconSet as IconSet); // State for the icon set
+  const [fontConfig, setFontConfig] = useState<FontConfig>({
+    ...defaultFontConfig,
+    ...customFonts,
+  });
 
   // const theme = isDarkTheme ? DarkTheme : DefaultTheme;
 
@@ -40,7 +52,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     setIconSet,
     IconNameType: iconSet.icons.map(
       (icon) => icon.properties.name
-    ) as ExtractIconNames<typeof iconSet>[], // Include IconNameType in the value object
+    ) as ExtractIconNames<typeof iconSet>[],
+    fontConfig,
+    setFontConfig,
   };
 
   return (

@@ -26,96 +26,96 @@ interface TypographyProps extends TextProps {
   children: React.ReactNode;
 }
 
-const typographyStyles = StyleSheet.create({
-  headline1: {
-    fontFamily: 'NotoSans-Bold',
-    fontSize: 30,
-    letterSpacing: 0.002,
-    lineHeight: 39,
-    marginBottom: 2,
-  },
-  headline2: {
-    fontFamily: 'NotoSans-Bold',
-    fontSize: 20,
-    letterSpacing: 0.012,
-    lineHeight: 26,
-    marginBottom: 2,
-  },
-  headline3: {
-    fontFamily: 'NotoSans-Bold',
-    fontSize: 16,
-    letterSpacing: 0,
-    lineHeight: 24,
-    marginBottom: 2,
-  },
-  bodyText1: {
-    fontFamily: 'NotoSans-Regular',
-    fontSize: 16,
-    letterSpacing: 0.012,
-    lineHeight: 24,
-    marginBottom: 2,
-  },
-  bodyText1Bold: {
-    fontFamily: 'NotoSans-SemiBold',
-    fontSize: 16,
-    letterSpacing: 0.012,
-    lineHeight: 24,
-    marginBottom: 2,
-  },
-  bodyText2: {
-    fontFamily: 'NotoSans-Reguler',
-    fontSize: 14,
-    letterSpacing: 0.012,
-    lineHeight: 21,
-    marginBottom: 2,
-  },
-  bodyText2Bold: {
-    fontFamily: 'NotoSans-SemiBold',
-    fontSize: 14,
-    letterSpacing: 0.012,
-    lineHeight: 21,
-    marginBottom: 2,
-  },
-  bodyText3: {
-    fontFamily: 'NotoSans-Regular',
-    fontSize: 12,
-    letterSpacing: 0.012,
-    lineHeight: 18,
-    marginBottom: 2,
-  },
-  bodyText3Bold: {
-    fontFamily: 'NotoSans-SemiBold',
-    fontSize: 12,
-    letterSpacing: 0.012,
-    lineHeight: 18,
-    marginBottom: 2,
-  },
-  buttonText1: {
-    fontFamily: 'NotoSans-SemiBold',
-    fontSize: 16,
-    letterSpacing: 0.012,
-    lineHeight: 24,
-    marginBottom: 2,
-  },
-  buttonText2: {
-    fontFamily: 'NotoSans-SemiBold',
-    fontSize: 12,
-    letterSpacing: 0.012,
-    lineHeight: 18,
-    marginBottom: 2,
-  },
-  percentages: {
-    fontFamily: 'NotoSans-SemiBold',
-    fontSize: 10,
-    letterSpacing: 0.002,
-    lineHeight: 10,
-    marginBottom: 0,
-  },
-});
-
 const Text: React.FC<TypographyProps> = React.memo(
   ({ variant = 'bodyText1', style, children, ...props }) => {
-    const { colors } = useTheme();
+    const { colors, fontConfig } = useTheme();
+
+    const typographyStyles = StyleSheet.create({
+      headline1: {
+        fontFamily: fontConfig.bold,
+        fontSize: 30,
+        letterSpacing: 0.002,
+        lineHeight: 39,
+        marginBottom: 2,
+      },
+      headline2: {
+        fontFamily: fontConfig.bold,
+        fontSize: 20,
+        letterSpacing: 0.012,
+        lineHeight: 26,
+        marginBottom: 2,
+      },
+      headline3: {
+        fontFamily: fontConfig.bold,
+        fontSize: 16,
+        letterSpacing: 0,
+        lineHeight: 24,
+        marginBottom: 2,
+      },
+      bodyText1: {
+        fontFamily: fontConfig.regular,
+        fontSize: 16,
+        letterSpacing: 0.012,
+        lineHeight: 24,
+        marginBottom: 2,
+      },
+      bodyText1Bold: {
+        fontFamily: fontConfig.semiBold,
+        fontSize: 16,
+        letterSpacing: 0.012,
+        lineHeight: 24,
+        marginBottom: 2,
+      },
+      bodyText2: {
+        fontFamily: 'NotoSans-Reguler',
+        fontSize: 14,
+        letterSpacing: 0.012,
+        lineHeight: 21,
+        marginBottom: 2,
+      },
+      bodyText2Bold: {
+        fontFamily: fontConfig.semiBold,
+        fontSize: 14,
+        letterSpacing: 0.012,
+        lineHeight: 21,
+        marginBottom: 2,
+      },
+      bodyText3: {
+        fontFamily: fontConfig.regular,
+        fontSize: 12,
+        letterSpacing: 0.012,
+        lineHeight: 18,
+        marginBottom: 2,
+      },
+      bodyText3Bold: {
+        fontFamily: fontConfig.semiBold,
+        fontSize: 12,
+        letterSpacing: 0.012,
+        lineHeight: 18,
+        marginBottom: 2,
+      },
+      buttonText1: {
+        fontFamily: fontConfig.semiBold,
+        fontSize: 16,
+        letterSpacing: 0.012,
+        lineHeight: 24,
+        marginBottom: 2,
+      },
+      buttonText2: {
+        fontFamily: fontConfig.semiBold,
+        fontSize: 12,
+        letterSpacing: 0.012,
+        lineHeight: 18,
+        marginBottom: 2,
+      },
+      percentages: {
+        fontFamily: fontConfig.semiBold,
+        fontSize: 10,
+        letterSpacing: 0.002,
+        lineHeight: 10,
+        marginBottom: 0,
+      },
+    });
 
     return (
       <RNText
