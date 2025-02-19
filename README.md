@@ -1,82 +1,46 @@
----
+# **rn-mob-common-ui**
 
-# rn-mob-common-ui
+_A basic UI design system for mobile applications._
 
-Basic UI design system for basic mobile needs.
+# **1. Installation**
 
-## Installation
+To install the package, use one of the following commands:
 
 ```sh
 npm install @herujest/rn-mob-common-ui
-
-or
-
+# or
 yarn add @herujest/rn-mob-common-ui
 ```
 
-## Usage
+---
 
-Getting Started
+# **2. Getting Started**
 
-1. Set Up the ThemeProvider
+### **2.1 Setting Up the ThemeProvider**
 
-Wrap your application (or a part of it) with the ThemeProvider component. This makes the theme and icon data available to all child components.
+Wrap your application (or a specific section) with the `ThemeProvider` component. This ensures theme data are available to all child components.
 
-```
+#### **Example:**
+
+```tsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from '@herujest/rn-mob-common-ui';
 import App from './App';
 
-// Example icon set (replace with your own JSON data)
-const iconSet = {
-  IcoMoonType: 'selection',
-  icons: [
-    {
-      icon: {
-        paths: ['...'],
-        attrs: [{}],
-        isMulticolor: false,
-        isMulticolor2: false,
-        tags: ['radio-checked'],
-        grid: 0,
-        colorPermutations: {
-          '17617819612839761': [{}],
-          '283976188922291': [{}]
-        }
-      },
-      attrs: [{}],
-      properties: {
-        order: 1126,
-        id: 0,
-        name: 'radio-checked',
-        prevSize: 32,
-        code: 59664
-      },
-      setIdx: 0,
-      setId: 4,
-      iconIdx: 2
-    }
-  ],
-  height: 1024,
-  metadata: { name: 'icomoon' },
-  preferences: { ... }
-};
-
 ReactDOM.render(
-  <ThemeProvider iconSet={iconSet}>
+  <ThemeProvider>
     <App />
   </ThemeProvider>,
   document.getElementById('root')
 );
-
 ```
 
---
+---
 
-Below are examples of how to use the components from the `rn-mob-common-ui` library.
+# **3. Components**
 
-### Buttons
+## **3.1 Buttons**
 
 A customizable button component.
 
@@ -90,7 +54,9 @@ import { Buttons } from 'rn-mob-common-ui';
 />;
 ```
 
-### Icon
+---
+
+## **3.2 Icon Component**
 
 Render SVG icons easily.
 
@@ -100,9 +66,33 @@ import { Icon } from 'rn-mob-common-ui';
 <Icon name="settings" size={24} color="#000" />;
 ```
 
-### Text
+### **Using Custom Icons**
 
-Styled text component with multiple variants for different textual representations.
+#### **Step 1: Generate JSON with IcoMoon**
+
+- Use [IcoMoon App](https://icomoon.io/app) to generate a JSON file.
+- Upload your SVGs and download the JSON.
+
+#### **Step 2: Configure `package.json`**
+
+```json
+"@herujest/rn-mob-common-ui": {
+  "icon-json-path": "path-to-your-json/customicon.json",
+  "output-types-path": "desired-path-to-your-json/IconTypes.ts"
+}
+```
+
+#### **Step 3: Generate Icon Types**
+
+```sh
+yarn generate-icon-types
+```
+
+---
+
+## **3.3 Text Component**
+
+Styled text component with multiple variants.
 
 ```tsx
 import { Text } from 'rn-mob-common-ui';
@@ -110,9 +100,76 @@ import { Text } from 'rn-mob-common-ui';
 <Text variant="headline1">Hello World!</Text>;
 ```
 
-### Container
+### **Using Custom Fonts**
 
-A base container component that uses a `SafeAreaView`.
+You can use your own icon vector by following this
+
+#### **Step 1: Add Custom Fonts**
+
+Place font files in `assets/fonts/`:
+
+```
+📂 your-project
+ ┣ 📂 assets
+ ┃ ┗ 📂 fonts
+ ┃   ┣ 🏷 CustomFont-Regular.ttf
+ ┃   ┣ 🏷 CustomFont-Bold.ttf
+ ┃   ┗ 🏷 CustomFont-Italic.ttf
+```
+
+#### **Step 2: Link Fonts in React Native**
+
+Modify `react-native.config.js`:
+
+```js
+module.exports = {
+  assets: ['./assets/fonts/'],
+};
+```
+
+Run the following command:
+
+```sh
+npx react-native-asset
+```
+
+#### **Step 3: Apply Custom Fonts in `Text` Component**
+
+```tsx
+import { ThemeProvider } from '@herujest/rn-mob-common-ui';
+
+const customTheme = {
+  typography: {
+    headline1: { fontFamily: 'CustomFont-Bold' },
+    bodyText1: { fontFamily: 'CustomFont-Regular' },
+    buttonText1: { fontFamily: 'CustomFont-Bold' },
+  },
+};
+
+const App = () => (
+  <ThemeProvider theme={customTheme}>
+    <Text variant="headline1">Hello, Custom Font!</Text>
+  </ThemeProvider>
+);
+
+export default App;
+```
+
+#### **Step 4: Use Custom Fonts**
+
+```tsx
+import { Text } from '@herujest/rn-mob-common-ui';
+
+const App = () => <Text variant="headline1">Hello, Custom Font!</Text>;
+
+export default App;
+```
+
+---
+
+## **3.4 Container Component**
+
+A base component that wraps content inside a `SafeAreaView`, ensuring proper layout and spacing.
 
 ```tsx
 import { Container } from 'rn-mob-common-ui';
@@ -122,9 +179,11 @@ import { Container } from 'rn-mob-common-ui';
 </Container>;
 ```
 
-### Content
+---
 
-Scrollable content area that ensures the keyboard doesn't overlap inputs.
+## **3.5 Content Component**
+
+A scrollable content area that ensures the keyboard does not overlap input fields.
 
 ```tsx
 import { Content } from 'rn-mob-common-ui';
@@ -134,7 +193,9 @@ import { Content } from 'rn-mob-common-ui';
 </Content>;
 ```
 
-### InputField
+---
+
+## **3.6 InputField Component**
 
 A labeled input field with validation styles.
 
@@ -150,19 +211,23 @@ import { InputField } from 'rn-mob-common-ui';
 />;
 ```
 
-### Modal & Popups
+---
 
-Reusable modal and popup components for various modals.
+## **3.7 Modal & Popup Components**
+
+Reusable modal and popup components.
 
 ```tsx
 import { Modal, Popups } from 'rn-mob-common-ui';
 
-// Use Popups with ref to control modal visibility
+// Example usage
 ```
 
-### EmptyView
+---
 
-A component to display empty states with an image and description.
+## **3.8 EmptyView Component**
+
+Displays empty states with an image and description.
 
 ```tsx
 import { EmptyView } from 'rn-mob-common-ui';
@@ -173,9 +238,11 @@ import { EmptyView } from 'rn-mob-common-ui';
 />;
 ```
 
-### Theme Context
+---
 
-Use theme context to access and switch between light and dark themes.
+## **3.9 Theme Context**
+
+Use the theme context to access and switch between light and dark themes dynamically.
 
 ```tsx
 import { ThemeProvider, useTheme } from 'rn-mob-common-ui';
@@ -191,10 +258,14 @@ const App = () => {
 };
 ```
 
-## Contributing
+---
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+# **4. Contributing**
 
-## License
+To contribute, please check the [Contributing Guide](CONTRIBUTING.md) for setup instructions and best practices.
 
-MIT
+---
+
+# **5. License**
+
+This project is licensed under the MIT License.
