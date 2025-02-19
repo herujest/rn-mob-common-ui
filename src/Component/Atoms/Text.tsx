@@ -1,30 +1,7 @@
 import React from 'react';
-import {
-  Text as RNText,
-  StyleSheet,
-  type StyleProp,
-  type TextProps,
-  type TextStyle,
-} from 'react-native';
+import { Text as RNText, StyleSheet } from 'react-native';
 import { useTheme } from '../../Context/ThemeContext';
-
-interface TypographyProps extends TextProps {
-  variant?:
-    | 'headline1'
-    | 'headline2'
-    | 'headline3'
-    | 'bodyText1'
-    | 'bodyText1Bold'
-    | 'bodyText2'
-    | 'bodyText2Bold'
-    | 'bodyText3'
-    | 'bodyText3Bold'
-    | 'buttonText1'
-    | 'buttonText2'
-    | 'percentages';
-  style?: StyleProp<TextStyle>;
-  children: React.ReactNode;
-}
+import type { TypographyProps } from './Text.type';
 
 const Text: React.FC<TypographyProps> = React.memo(
   ({ variant = 'bodyText1', style, children, ...props }) => {

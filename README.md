@@ -136,9 +136,12 @@ npx react-native-asset
 #### **Step 3: Apply Custom Fonts in `Text` Component**
 
 ```tsx
-import { ThemeProvider } from '@herujest/rn-mob-common-ui';
+import {
+  ThemeProvider,
+  type TypographyTheme,
+} from '@herujest/rn-mob-common-ui';
 
-const customTheme = {
+const customTheme: { typography: Partial<TypographyTheme> } = {
   typography: {
     headline1: { fontFamily: 'CustomFont-Bold' },
     bodyText1: { fontFamily: 'CustomFont-Regular' },
