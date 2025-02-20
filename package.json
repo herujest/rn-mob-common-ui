@@ -124,10 +124,6 @@
     "github": {
       "release": true
     },
-    "hooks": {
-      "before:npm": "npm config set registry https://registry.npmjs.org/",
-      "after:npm": "npm config set registry https://npm.pkg.github.com/"
-    },
     "plugins": {
       "@release-it/conventional-changelog": {
         "preset": "conventionalcommits"
