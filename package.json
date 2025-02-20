@@ -37,7 +37,7 @@
     "!**/.*"
   ],
   "bin": {
-    "generate-icon-types": "./src/scripts/generate-icon-types.js"
+    "generate-icon-types": "src/scripts/generate-icon-types.js"
   },
   "scripts": {
     "example": "yarn workspace rn-mob-common-ui-example",
@@ -209,5 +209,9 @@
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-modal": "^13.0.1",
     "react-native-svg": "^15.11.1"
+  },
+  "directories": {
+    "example": "example",
+    "lib": "lib"
   }
 }
