@@ -8,22 +8,36 @@ import {
   Gutters,
   Metrics,
   CommonStyles,
+  type FontConfig,
 } from '@herujest/rn-mob-common-ui';
 import { StyleSheet, View } from 'react-native';
 import Icon from './assets/fonts/Icon';
 
 const result = multiply(3, 7);
 
+const myCustomFonts: FontConfig = {
+  bold: 'Montserrat-Bold',
+  semiBold: 'Montserrat-SemiBold',
+  regular: 'Montserrat-Regular',
+};
+
 export default function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider customFonts={myCustomFonts}>
       <Container style={CommonStyles.container}>
         <Content>
           <View style={styles.container}>
-            <Text>Result: {result}</Text>
+            <Text variant="headline1">Result: {result}</Text>
+            <Text variant="headline1">Result: {result}</Text>
           </View>
           <Icon name="mobile" size={15} />
-          <Buttons type="primary" title="Primary Button" />
+          <Buttons
+            type="primary"
+            title="Primary Button"
+            onPress={() => {
+              console.log('Primary Button Pressed');
+            }}
+          />
           <Buttons type="primaryInactive" title="Primary Inactive Button" />
           <Buttons type="secondary" title="Secondary Button" />
           <Buttons type="secondaryInactive" title="Secondary Inactive Button" />

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Dimensions } from 'react-native';
 import { defaultFontConfig } from '.';
 import { darkTheme, lightTheme } from '../Assets/Colors';
@@ -34,6 +34,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     ...defaultFontConfig,
     ...customFonts,
   });
+
+  useEffect(() => {
+    console.log('fontConfig', fontConfig);
+  }, [fontConfig]);
 
   // const theme = isDarkTheme ? DarkTheme : DefaultTheme;
 
