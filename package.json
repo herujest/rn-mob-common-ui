@@ -64,9 +64,6 @@
     "url": "https://github.com/herujest/rn-mob-common-ui/issues"
   },
   "homepage": "https://github.com/herujest/rn-mob-common-ui#readme",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
     "@evilmartians/lefthook": "^1.5.0",
