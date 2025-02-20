@@ -113,7 +113,6 @@
   },
   "release-it": {
     "git": {
-      "remote": "github-origin",
       "commitMessage": "chore: release ${version}",
       "tagName": "v${version}"
     },
